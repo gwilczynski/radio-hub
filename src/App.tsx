@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.css";
+import radio357Logo from "./assets/357.png"
+import radioNowySwiatLogo from "./assets/ns.png"
+import radioNewonceLogo from "./assets/no.png"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <section className="SongListItemSection">
+        <h1>Radio Hub</h1>
+        <ul className="SongListItems">
+          <li className="SongListItem selected">
+            <img className="songCover" src={radio357Logo} alt="cover"/>
+            <audio controls>
+              <source src="https://stream.rcs.revma.com/ye5kghkgcm0uv"/>
+            </audio>
+          </li>
+          <li className="SongListItem selected">
+            <img className="songCover" src={radioNowySwiatLogo} alt="cover"/>
+            <audio controls>
+              <source src="https://stream.rcs.revma.com/ypqt40u0x1zuv"/>
+            </audio>
+          </li>
+          <li className="SongListItem selected">
+            <img className="songCover" src={radioNewonceLogo} alt="cover"/>
+            <audio controls>
+              <source src="https://stream.rcs.revma.com/fq577gymev8uv"/>
+            </audio>
+          </li>
+        </ul>
+      </section>
     </div>
-  )
+  );
 }
 
 export default App
