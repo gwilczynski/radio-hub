@@ -1,7 +1,7 @@
 import "./App.css";
-import radio357Logo from "./assets/357.png"
-import radioNowySwiatLogo from "./assets/ns.png"
-import radioNewonceLogo from "./assets/no.png"
+import radio357Logo from "./assets/357.png";
+import radioNowySwiatLogo from "./assets/ns.png";
+import radioNewonceLogo from "./assets/no.png";
 
 function App() {
   return (
@@ -33,4 +33,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
