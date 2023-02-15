@@ -1,32 +1,40 @@
 import "./App.css";
-import radio357Logo from "./assets/357.webp";
-import radioNowySwiatLogo from "./assets/ns.webp";
-import radioNewonceLogo from "./assets/no.webp";
+import { Player } from "./components/Player";
+import { Station } from "./types/Station";
+
+import r357Logo from "./assets/357.webp";
+import nsLogo from "./assets/ns.webp";
+import noLogo from "./assets/no.webp";
 
 function App() {
+  const stations: Station[] = [
+    {
+      id: "357",
+      logoUrl: r357Logo,
+      streamUrl: "https://stream.rcs.revma.com/ye5kghkgcm0uv",
+    },
+    {
+      id: "ns",
+      logoUrl: nsLogo,
+      streamUrl: "https://stream.rcs.revma.com/ypqt40u0x1zuv",
+    },
+    {
+      id: "no",
+      logoUrl: noLogo,
+      streamUrl: "https://stream.rcs.revma.com/fq577gymev8uv",
+    },
+  ];
+
   return (
     <div className="App">
       <section className="SongListItemSection">
         <h1>Radio Hub</h1>
         <ul className="SongListItems">
-          <li className="SongListItem selected">
-            <img className="songCover" src={radio357Logo} alt="cover" />
-            <audio controls>
-              <source src="https://stream.rcs.revma.com/ye5kghkgcm0uv" />
-            </audio>
-          </li>
-          <li className="SongListItem selected">
-            <img className="songCover" src={radioNowySwiatLogo} alt="cover" />
-            <audio controls>
-              <source src="https://stream.rcs.revma.com/ypqt40u0x1zuv" />
-            </audio>
-          </li>
-          <li className="SongListItem selected">
-            <img className="songCover" src={radioNewonceLogo} alt="cover" />
-            <audio controls>
-              <source src="https://stream.rcs.revma.com/fq577gymev8uv" />
-            </audio>
-          </li>
+          {stations.map((station) => (
+            <li key={station.id}>
+              <Player {...station} />
+            </li>
+          ))}
         </ul>
       </section>
     </div>
