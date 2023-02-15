@@ -1,12 +1,14 @@
 import { Station } from "../types/Station";
 
-export const Player = ({ logoUrl, streamUrl }: Station) => {
+export function Player({ logoUrl, streamUrl }: Station) {
   return (
-    <section className="SongListItem selected">
-      <img className="songCover" src={logoUrl} alt="cover" />
-      <audio controls>
-        <source src={streamUrl} />
-      </audio>
+    <section className="SongPlayerSection">
+      <div className="SongPlayer">
+        <img className="App-player-cover" src={logoUrl} alt="cover" />
+        <audio autoPlay={true} controls={false} key={streamUrl}>
+          <source src={streamUrl} />
+        </audio>
+      </div>
     </section>
   );
-};
+}

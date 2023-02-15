@@ -1,39 +1,37 @@
 import "./App.css";
 import { Player } from "./components/Player";
+
+import { stations } from "./data/stations";
+import { StationListItem } from "./components/StationListItem";
+import { useState } from "react";
 import { Station } from "./types/Station";
 
-import r357Logo from "./assets/357.webp";
-import nsLogo from "./assets/ns.webp";
-import noLogo from "./assets/no.webp";
-
 function App() {
-  const stations: Station[] = [
-    {
-      id: "357",
-      logoUrl: r357Logo,
-      streamUrl: "https://stream.rcs.revma.com/ye5kghkgcm0uv",
-    },
-    {
-      id: "ns",
-      logoUrl: nsLogo,
-      streamUrl: "https://stream.rcs.revma.com/ypqt40u0x1zuv",
-    },
-    {
-      id: "no",
-      logoUrl: noLogo,
-      streamUrl: "https://stream.rcs.revma.com/fq577gymev8uv",
-    },
-  ];
+  const [currentStationIndex, setCurrentStationIndex] = useState(0);
+  const currentStation = stations[currentStationIndex];
+
+  function handleSelectStation(selectedStation: Station) {
+    const audioIndex = stations.findIndex(
+      (station) => station.id === selectedStation.id
+    );
+    if (audioIndex >= 0) {
+      setCurrentStationIndex(audioIndex);
+    }
+  }
 
   return (
     <div className="App">
+      <Player {...currentStation} />
       <section className="SongListItemSection">
-        <h1>Radio Hub</h1>
+        <h1>Stations</h1>
         <ul className="SongListItems">
           {stations.map((station) => (
-            <li key={station.id}>
-              <Player {...station} />
-            </li>
+            <StationListItem
+              key={station.id}
+              station={station}
+              isCurrentStation={currentStation.id === station.id}
+              onSelect={handleSelectStation}
+            />
           ))}
         </ul>
       </section>
