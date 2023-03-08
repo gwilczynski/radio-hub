@@ -3,4 +3,5 @@ export type Station = {
   name: string;
   logoUrl: string;
   streamUrl: string;
+  isAvailableToSelect: boolean;
 };

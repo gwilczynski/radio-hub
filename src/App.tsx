@@ -25,14 +25,16 @@ function App() {
       <section className="SongListItemSection">
         <h1>Stations</h1>
         <ul className="SongListItems">
-          {stations.map((station) => (
-            <StationListItem
-              key={station.id}
-              station={station}
-              isCurrentStation={currentStation.id === station.id}
-              onSelect={handleSelectStation}
-            />
-          ))}
+          {stations
+            .filter((station) => station.isAvailableToSelect)
+            .map((station) => (
+              <StationListItem
+                key={station.id}
+                station={station}
+                isCurrentStation={currentStation.id === station.id}
+                onSelect={handleSelectStation}
+              />
+            ))}
         </ul>
       </section>
     </div>
