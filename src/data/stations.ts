@@ -2,6 +2,7 @@ import { Station } from "../types/Station";
 import r357Logo from "../assets/357.webp";
 import nsLogo from "../assets/ns.webp";
 import noLogo from "../assets/no.webp";
+import jazz from "../assets/jazz.jpeg"
 import defaultLogo from "../assets/radio.png";
 
 export const stations: Station[] = [
@@ -11,6 +12,13 @@ export const stations: Station[] = [
     logoUrl: defaultLogo,
     streamUrl: "",
     isAvailableToSelect: false,
+  },
+  {
+    id: "jazzkultura",
+    name: "JazzKultura",
+    logoUrl: jazz,
+    streamUrl: "https://stream.radio.co/s1136b59f3/listen",
+    isAvailableToSelect: true,
   },
   {
     id: "357",
