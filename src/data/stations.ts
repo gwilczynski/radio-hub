@@ -14,13 +14,6 @@ export const stations: Station[] = [
     isAvailableToSelect: false,
   },
   {
-    id: "jazzkultura",
-    name: "JazzKultura",
-    logoUrl: jazz,
-    streamUrl: "https://stream.radio.co/s1136b59f3/listen",
-    isAvailableToSelect: false,
-  },
-  {
     id: "357",
     name: "Radio 357",
     logoUrl: r357Logo,
@@ -33,12 +26,5 @@ export const stations: Station[] = [
     logoUrl: nsLogo,
     streamUrl: "https://stream.rcs.revma.com/ypqt40u0x1zuv",
     isAvailableToSelect: true,
-  },
-  {
-    id: "no",
-    name: "Newonce Radio",
-    logoUrl: noLogo,
-    streamUrl: "https://stream.rcs.revma.com/fq577gymev8uv",
-    isAvailableToSelect: false,
   },
 ];
